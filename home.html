@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Home · ROBugcreammm</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="pages.css"><script>try{var t=localStorage.getItem("rom-theme");if(t===null)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script></head><body><div class="topbar home-top"><div class="wrap bar"><a class="logo" href="index.html"><span class="dot"></span><span><span class="ro">RO</span>Bugcreammm</span></a><nav class="hnav"><a href="home.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</a><a href="index.html#monsters"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V10a7 7 0 0 1 14 0v11l-2.4-1.8L14.3 21 12 19.2 9.7 21l-2.3-1.8z"/><circle cx="9.5" cy="11.5" r="1.1"/><circle cx="14.5" cy="11.5" r="1.1"/></svg>Monsters</a><a href="index.html#jobs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>Jobs</a><a href="index.html#skills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.6 5.3 5.8.9-4.2 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.2-4.1 5.8-.9z"/></svg>Skills</a><a href="index.html#cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="6" width="12" height="14" rx="2"/><path d="M8 6V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-1.5"/></svg>Cards</a><a href="6v6.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21 4 16.5v-9z"/></svg>6v6<i class="nd"></i></a><a href="6v6.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="m14.5 4.5 5 5L8 21l-5 1 1-5z"/></svg>Draft</a></nav><div class="top-actions"><label class="top-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg><input type="text" placeholder="Search monsters, cards, skills…"><kbd>⌘K</kbd></label><button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button><button class="icon-btn" type="button" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="ndot">3</span></button><a class="btn-admin" href="6v6.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V20a2 2 0 0 1-4 0v-.2a1.6 1.6 0 0 0-2.7-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 4.6 13H4.4a2 2 0 0 1 0-4h.2a1.6 1.6 0 0 0 1.1-2.7l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 11 4.6V4.4a2 2 0 0 1 4 0v.2a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.6 1.6 0 0 0 19.4 11h.2a2 2 0 0 1 0 4z"/></svg>Admin</a><a class="btn-admin ghost" href="6v6.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>Admin</a></div></div></div>
+<div class="server-ticker"><div class="wrap row">
+  <span class="st"><i class="dot ok"></i><b>Prontera</b> Stable</span>
+  <span class="st"><i class="dot ok"></i><b>Geffen</b> Stable</span>
+  <span class="st"><i class="dot ok"></i><b>Payon</b> Stable</span>
+  <span class="st"><i class="dot warn"></i><b>Izlude</b> High Load</span>
+  <span class="grow"></span>
+  <span class="ti"><b class="tag event">EVENT</b> Slayers × Eternal Love 2.0 Crossover — ends <b>23 Mar</b></span>
+  <span class="ti"><b class="tag patch">PATCH</b> Eternal Love 2.0 · Slayer crossover jobs · new costumes</span>
+  <span class="ti"><b class="tag dungeon">DUNGEON</b> Invasion</span>
+</div></div>
+<section class="champ">
+  <img class="champ-bg-art" src="assets/hero-bg.jpg" alt="" onerror="this.remove()">
+  <div class="champ-sky"></div>
+  <div class="champ-city"></div>
+  <div class="wrap champ-grid">
+  <div class="champ-left">
+    <span class="live"><i></i> LIVE NOW</span>
+    <div class="eyb">OFFICIAL ESPORTS EVENT · SEASON 3</div>
+    <h1>Ragnarok M: <span class="g">Eternal Love</span><br>Championship Season 3</h1>
+    <p>การแข่งขัน Ragnarok M ที่ใหญ่ที่สุดแห่งปี — 64 กิลด์ชั้นนำจาก 4 เซิร์ฟเวอร์ ชิง <b>Crown of Midgard</b> และเงินรางวัล <b>1,000,000 zeny</b> ดูสด ส่งกิลด์เข้าแข่ง หรือทายผลสายได้เลย</p>
+    <div class="cd" id="cd">
+      <div class="u"><div class="n" id="cdD">--</div><div class="l">DAYS</div></div>
+      <div class="u"><div class="n" id="cdH">--</div><div class="l">HOURS</div></div>
+      <div class="u"><div class="n" id="cdM">--</div><div class="l">MINUTES</div></div>
+      <div class="u"><div class="n" id="cdS">--</div><div class="l">SECONDS</div></div>
+    </div>
+    <div class="champ-btns">
+      <a class="btn-primary" href="6v6.html">Explore Championship →</a>
+      <a class="btn-ghost" href="6v6.html">🏆 View Rewards</a>
+    </div>
+    <div class="hstats"><div class="hstat"><div class="n">148K</div><div class="l">PARTICIPANTS</div></div><div class="hstat"><div class="n">32</div><div class="l">REWARDS</div></div><div class="hstat"><div class="n">S+</div><div class="l">TIER DROP</div></div><div class="hstat"><div class="n">4×</div><div class="l">EXP BOOST</div></div></div>
+  </div>
+  <div class="champ-art">
+    <div class="cs-orbit"><div class="orb pos-tl" style="--og:#b06bff"><img src="assets/icons/jobs/hela.png" alt="Hela" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Hela</span></div><div class="orb pos-tr" style="--og:#4ade80"><img src="assets/icons/jobs/saint.png" alt="Saint" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Saint</span></div><div class="orb pos-l" style="--og:#a855f7"><img src="assets/icons/jobs/yamata.png" alt="Yamata" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Yamata</span></div><div class="orb pos-r" style="--og:#60a5fa"><img src="assets/icons/jobs/khalitzburg.png" alt="Khalitzburg" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Khalitzburg</span></div><div class="orb pos-bl" style="--og:#f4d27a"><img src="assets/icons/jobs/ancientartifactuser.png" alt="Ancient Artifact User" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Ancient Artifact User</span></div><div class="orb pos-br" style="--og:#fbbf24"><img src="assets/icons/jobs/spiritwhisperer.png" alt="Spirit Whisperer" onerror="this.parentNode.classList.add('noimg')"><span class="orb-label">Spirit Whisperer</span></div></div>
+    <div class="platform"></div>
+    <img class="champ-hero-art" src="assets/hero-character.png" alt="" onerror="this.remove()">
+    <div class="cs-center"><img src="assets/icons/jobs/hela.png" alt="Hela" onerror="this.style.display='none'"><div><div class="cn">Hela</div><div class="cc">1st Class</div></div></div>
+  </div>
+</div></section><script>function toggleTheme(){var d=document.documentElement;var k=d.getAttribute("data-theme")==="dark";if(k)d.removeAttribute("data-theme");else d.setAttribute("data-theme","dark");try{localStorage.setItem("rom-theme",k?"":"dark")}catch(e){}ti()}function ti(){var b=document.getElementById("themeBtn");if(b)b.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"}ti();</script><script>
+(function(){var t=new Date();t.setDate(t.getDate()+10);t.setHours(t.getHours()+19);var T=t.getTime();
+function p(n){return(n<10?"0":"")+n}
+function tick(){var d=Math.max(0,T-Date.now()),s=Math.floor(d/1000);
+document.getElementById("cdD").textContent=p(Math.floor(s/86400));
+document.getElementById("cdH").textContent=p(Math.floor(s%86400/3600));
+document.getElementById("cdM").textContent=p(Math.floor(s%3600/60));
+document.getElementById("cdS").textContent=p(s%60);}
+tick();setInterval(tick,1000);})();
+</script><script>
+/* home hero — every 10s, crossfaded (no hard blink):
+   • orbit icons random from Hero / Collab / 4th-Job classes
+   • center card = random Tier-S class pulled LIVE from the 6v6 meta (localStorage "rom-rank") */
+(function(){
+  try{if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;}catch(e){}
+  var COLORS=["#b06bff","#4ade80","#a855f7","#60a5fa","#f4d27a","#fbbf24","#ff8475","#34d399"];
+  /* orbit pool: Hero + Collab + 4th-Job classes (taxonomy from search-index.js) */
+  var ORBIT_POOL=[["thanatos","Thanatos"],["nidhogg","Nidhogg"],["shadowsaitama","Shadow Saitama"],["shadowgenos","Shadow Genos"],["hela","Hela"],["hollgrehenn","Hollgrehenn"],["rathgricy","Rathgricy"],["jormungandr","Jormungandr"],["heinrich","Heinrich"],["ancientartifactuser","Ancient Artifact User"],["thor","Thor"],["fenrir","Fenrir"],["khalitzburg","Khalitzburg"],["saraalin","Sara Alin"],["ellinia","Ellinia"],["liumaoxing","Liu Maoxing"],["morroc","Morroc"],["sunlight","Sunlight"],["thenameless","The Nameless"],["kafra","Kafra"],["bellcranel","Bell Cranel"],["aiswallenstein","Ais Wallenstein"],["oscar","Oscar"],["divineavenger","Divine Avenger"],["runemaster","Runemaster"],["arcanemaster","Arcane Master"],["chronomancer","Chronomancer"],["bladesoul","Blade Soul"],["phantomdancer","Phantom Dancer"],["stellarhunter","Stellar Hunter"],["lunadanseuse","Luna Danseuse"],["solartrouvere","Solar Trouvere"],["saint","Saint"],["dragonfist","Dragon Fist"],["lightbringer","Lightbringer"],["begetter","Begetter"],["infernoarmor","Inferno Armor"],["ryuoumaru","Ryuoumaru"],["slayer","Slayer"]];
+  /* cold-start S fallback — used only until the 6v6 Meta page has been saved once */
+  var FALLBACK=[{tier:"S",classes:["Saint","Lightbringer","Spirit Whisperer","Arcane Master","Archbishop","Genetic"]}];
+  function jf(n){return String(n||"").normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]/g,"");}
+  function tierSpool(){           /* Tier-S classes from the live 6v6 tier list (localStorage) */
+    var rank=null;
+    try{var s=localStorage.getItem("rom-rank"); if(s)rank=JSON.parse(s);}catch(e){}
+    if(!Array.isArray(rank)||!rank.length)rank=FALLBACK;
+    var pool=[];
+    rank.forEach(function(t){
+      if(String(t.tier||"").trim().toUpperCase().charAt(0)==="S")
+        (t.classes||[]).forEach(function(n){ if(n)pool.push([jf(n),n]); });
+    });
+    return pool;
+  }
+  function sample(pool,n){        /* distinct where possible; repeats only if pool < n */
+    var out=[],p=pool.slice();
+    for(var i=0;i<n;i++){ if(!p.length)p=pool.slice(); out.push(p.length?p.splice(Math.floor(Math.random()*p.length),1)[0]:null); }
+    return out;
+  }
+  function setOrb(o,job){         /* crossfade orbit icon */
+    if(!job)return;
+    var lab=o.querySelector(".orb-label");
+    var ni=document.createElement("img");
+    ni.src="assets/icons/jobs/"+job[0]+".png"; ni.alt=job[1]; ni.style.opacity="0";
+    ni.onerror=function(){o.classList.add("noimg"); if(ni.parentNode)ni.parentNode.removeChild(ni);};
+    o.insertBefore(ni, lab||null);
+    o.classList.remove("noimg");
+    var olds=[].slice.call(o.querySelectorAll("img")).filter(function(x){return x!==ni;});
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      ni.style.opacity="1"; olds.forEach(function(x){x.style.opacity="0";});
+    });});
+    setTimeout(function(){olds.forEach(function(x){if(x.parentNode)x.parentNode.removeChild(x);});},1300);
+    if(lab){lab.style.transition="opacity .55s ease"; lab.style.opacity="0";
+      setTimeout(function(){lab.textContent=job[1]; lab.style.opacity="1";},560);}
+    o.style.setProperty("--og",COLORS[Math.floor(Math.random()*COLORS.length)]);
+  }
+  function setCenter(card,job){   /* gentle fade swap of the featured S-tier card */
+    if(!card||!job)return;
+    var img=card.querySelector("img"), cn=card.querySelector(".cn"), cc=card.querySelector(".cc");
+    [img,cn,cc].forEach(function(el){if(el){el.style.transition="opacity .5s ease";el.style.opacity="0";}});
+    setTimeout(function(){
+      if(img){img.src="assets/icons/jobs/"+job[0]+".png"; img.alt=job[1]; img.style.display="";}
+      if(cn)cn.textContent=job[1];
+      if(cc)cc.textContent="S-Tier";
+      [img,cn,cc].forEach(function(el){if(el)el.style.opacity="1";});
+    },520);
+  }
+  var orbs=[].slice.call(document.querySelectorAll(".cs-orbit .orb"));
+  var center=document.querySelector(".cs-center");
+  if(!orbs.length&&!center)return;
+  function shuffle(){
+    var sel=sample(ORBIT_POOL,orbs.length);
+    orbs.forEach(function(o,i){ setTimeout(function(){setOrb(o,sel[i]);}, i*150); }); /* stagger */
+    var sp=tierSpool();
+    if(center&&sp.length) setCenter(center, sp[Math.floor(Math.random()*sp.length)]);
+  }
+  shuffle(); setInterval(shuffle,10000);
+})();
+</script><script src="atmosphere.js" defer></script></body></html>

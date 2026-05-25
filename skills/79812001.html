@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lex Divina · ROBugcreammm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script>try{var t=localStorage.getItem("rom-theme");if(t===null)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+</head><body>
+<div class="topbar"><div class="wrap bar">
+  <a class="logo" href="../index.html"><span class="dot"></span><span><span class="ro">RO</span>Bugcreammm</span></a>
+  <div class="nav"><a href="../home.html">Home</a><a href="../index.html">Database</a><a href="../6v6.html">6v6</a></div>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+</div></div>
+<div class="wrap">
+  <a class="back" href="../index.html">← กลับหน้าหลัก</a>
+  <div class="detail-head">
+    <div class="detail-sprite">✨</div>
+    <div class="detail-title">
+      <h1>Lex Divina</h1>
+      <div class="detail-sub">Skill · Skills #79812001</div>
+      <div class="chips"></div>
+    </div>
+  </div>
+  <div class="section"><h3>Description</h3><div class="desc">Lex Divina Lvl: 1 Buff Range: 6 Silences an enemy for 10 sec Enemy 107 function CommonFun.calcBuff_107(srcUser, targetUser, a, b, c, d, lv) if srcUser == nil or targetUser == nil then return 0 end local Num1 = srcUser:GetRunePoint(52130_AESIR_TARGETS_ATTACKED_BY_LEX_DIVINA_LOSE_2_MAX_SP) local MaxSp = targetUser:GetProperty(&quot;MaxSp&quot;) local A = Num1 * a * MaxSp return A end Enemy { &quot;id&quot;: 96040, &quot;BuffDesc&quot;: &quot;Silence: disable all skills except auto attacks&quot;, &quot;BuffIcon&quot;: &quot;skillbuff_231001&quot;, &quot;BuffName&quot;: &quot;Lex Divina [Silence]&quot;, &quot;BuffRate&quot;: { &quot;Odds&quot;: { &quot;type&quot;: 103 } }, &quot;BuffType&quot;: { &quot;isgain&quot;: 0, &quot;isdi</div></div>
+</div>
+<script>function toggleTheme(){var d=document.documentElement;var dark=d.getAttribute("data-theme")==="dark";if(dark){d.removeAttribute("data-theme")}else{d.setAttribute("data-theme","dark")}try{localStorage.setItem("rom-theme",dark?"":"dark")}catch(e){}setThemeIcon()}function setThemeIcon(){var b=document.getElementById("themeBtn");if(b)b.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"}setThemeIcon();</script>
+<script src="../atmosphere.js" defer></script>
+</body></html>

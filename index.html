@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ROBugcreammm · Ragnarok M Database</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("rom-theme");if(t===null)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+</head><body>
+<div class="topbar"><div class="wrap bar">
+  <a class="logo" href="index.html"><span class="dot"></span><span><span class="ro">RO</span>Bugcreammm</span></a>
+  <div class="nav" id="nav"></div>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+</div></div>
+<section class="hero"><div class="wrap">
+  <span class="deco d1"></span><span class="deco d2"></span><span class="deco d3"></span><span class="deco d4"></span>
+  <div class="hero-in">
+    <span class="eyebrow">Ragnarok M · Free Database</span>
+    <h1>คลังข้อมูล Ragnarok M ครบทุกอย่าง</h1>
+    <p>มอนสเตอร์ · ไอเทม · การ์ด · สกิล · อาชีพ — รวมจาก ROM Handbook archive เปิดดูได้ทุกหน้า ไม่ต้องล็อกอิน</p>
+    <div class="hstats" id="hstats"></div>
+  </div>
+</div></section>
+<div class="wrap section-wrap">
+  <div class="controls">
+    <div class="search"><span class="ic">🔍</span><input id="q" type="text" placeholder="ค้นหาชื่อ / ID …"></div>
+    <span id="filters"></span>
+  </div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<script>function toggleTheme(){var d=document.documentElement;var dark=d.getAttribute("data-theme")==="dark";if(dark){d.removeAttribute("data-theme")}else{d.setAttribute("data-theme","dark")}try{localStorage.setItem("rom-theme",dark?"":"dark")}catch(e){}setThemeIcon()}function setThemeIcon(){var b=document.getElementById("themeBtn");if(b)b.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"}setThemeIcon();</script>
+<script src="search-index.js"></script>
+<script>
+(function(){
+  var DATA = window.ROM_INDEX || [];
+  var CATS = ["monsters","equipments","headwears","cards","skills","jobs"];
+  var LABEL = {monsters:"Monsters",equipments:"Equipments",headwears:"Headwears",cards:"Cards",skills:"Skills",jobs:"Jobs"};
+  var CAT_EMOJI = {monsters:"👾",equipments:"🗡️",headwears:"🎩",cards:"🃏",skills:"✨",jobs:"⚔️"};
+  var EL_EMOJI = {Water:"💧",Fire:"🔥",Earth:"🪨",Wind:"🌪️",Holy:"✨",Shadow:"🌑",Dark:"🌑",Undead:"🧟",Poison:"☠️",Ghost:"👻",Neutral:"⚪",Demon:"😈",Formless:"🌀"};
+  var GROUP_ORDER = ["Hero Classes","Collab Classes","4th Job Classes","Expanded Classes","Other Classes"];
+  var STEP = 120, shown = STEP, cat = "monsters", filters = {};
+  var byCat = {}; CATS.forEach(function(c){byCat[c]=[];});
+  DATA.forEach(function(r){ if(byCat[r.c]) byCat[r.c].push(r); r._s=((r.n||"")+" "+r.id+" "+(r.e||"")+" "+(r.r||"")+" "+(r.sl||"")+" "+(r.z||"")).toLowerCase(); });
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];});}
+  function distinct(c,k){var s={};byCat[c].forEach(function(r){if(r[k]!==undefined&&r[k]!==""&&r[k]!==0)s[r[k]]=1;});return Object.keys(s).sort();}
+  function sprite(r){ if(r.c==="jobs") return '<img src="assets/icons/jobs/'+esc(r.f)+'.png" loading="lazy" alt="" onerror="this.outerHTML=\''+CAT_EMOJI.jobs+'\'">'; if(r.c==="monsters") return EL_EMOJI[r.e]||CAT_EMOJI.monsters; return CAT_EMOJI[r.c]||"❓"; }
+
+  function renderFilters(){
+    var host=document.getElementById("filters"), defs=[];
+    if(cat==="monsters") defs=[["Element","e"],["Race","r"],["Size","sz"],["Type","ty"]];
+    else if(cat==="equipments") defs=[["Type","sl"],["Quality","q"]];
+    host.innerHTML = defs.map(function(d){
+      var opts=distinct(cat,d[1]).map(function(o){return '<option value="'+esc(o)+'"'+(String(filters[d[1]])===String(o)?" selected":"")+'>'+(d[1]==="q"?"★".repeat(+o):esc(o))+'</option>';}).join("");
+      return '<select data-f="'+d[1]+'"><option value="">'+d[0]+': ทั้งหมด</option>'+opts+'</select>';
+    }).join("");
+    [].forEach.call(host.querySelectorAll("select"),function(s){
+      s.onchange=function(){var f=s.getAttribute("data-f");if(s.value)filters[f]=s.value;else delete filters[f];shown=STEP;render();};
+    });
+  }
+  function filtered(){
+    var q=(document.getElementById("q").value||"").toLowerCase().trim();
+    var pool = q ? DATA : byCat[cat];
+    return pool.filter(function(r){
+      if(q && r._s.indexOf(q)<0) return false;
+      if(!q) for(var f in filters){ if(String(r[f]==null?"":r[f])!==String(filters[f])) return false; }
+      return true;
+    });
+  }
+  function cardHTML(r){
+    var tags="";
+    if(r.c==="monsters") tags='<span class="tag">'+esc(r.r||"")+'</span><span class="tag">'+esc(r.e||"")+'</span>';
+    else if(r.c==="equipments"||r.c==="headwears") tags='<span class="tag">'+esc(r.sl||"")+'</span>'+(r.q?'<span class="tag">'+"★".repeat(r.q)+'</span>':"");
+    else if(r.c==="jobs") tags='<span class="tag">'+esc(r.g||"Job")+'</span>';
+    else tags='<span class="tag">'+LABEL[r.c]+'</span>';
+    return '<a class="card" href="'+esc(r.u)+'"><div class="card-head"><span class="badge">#'+esc(r.id)+'</span><div class="card-sprite">'+sprite(r)+'</div></div>'
+      +'<div class="card-body"><div class="card-name">'+esc(r.n)+'</div><div class="tags">'+tags+'</div></div></a>';
+  }
+  function render(){
+    var out=filtered(), grid=document.getElementById("grid");
+    var q=(document.getElementById("q").value||"").trim();
+    document.getElementById("count").textContent = out.length.toLocaleString()+" รายการ"+(q?" · ทุกหมวด":"");
+    if(!out.length){grid.innerHTML='<div class="empty">ไม่พบรายการ</div>';return;}
+    // jobs grouped (เฉพาะ browse ไม่ค้นหา)
+    if(cat==="jobs" && !q){
+      var by={}; out.forEach(function(r){(by[r.g]||(by[r.g]=[])).push(r);});
+      var html="";
+      GROUP_ORDER.forEach(function(g){
+        var arr=by[g]; if(!arr||!arr.length)return;
+        arr.sort(function(a,b){return g==="Other Classes"?(a.n||"").localeCompare(b.n||""):(a.gi||0)-(b.gi||0);});
+        html+='<div class="group-head"><h2>'+esc(g)+'</h2><span class="gc">'+arr.length+'</span><span class="ln"></span></div>'+arr.map(cardHTML).join("");
+      });
+      grid.innerHTML=html; return;
+    }
+    out.sort(function(a,b){return (a.n||"").localeCompare(b.n||"");});
+    var slice=out.slice(0,shown);
+    var html=slice.map(cardHTML).join("");
+    if(out.length>shown) html+='<button class="more-btn" id="more">โหลดเพิ่ม ('+(out.length-shown).toLocaleString()+')</button>';
+    grid.innerHTML=html;
+    var mb=document.getElementById("more"); if(mb) mb.onclick=function(){shown+=STEP*3;render();};
+  }
+  function hstats(){
+    var el=document.getElementById("hstats"); if(!el) return;
+    el.innerHTML=[[DATA.length.toLocaleString(),"รายการ"],[CATS.length,"หมวด"],["ฟรี","ไม่ต้องล็อกอิน"]]
+      .map(function(s){return '<div class="hstat"><div class="n">'+s[0]+'</div><div class="l">'+s[1]+'</div></div>';}).join("");
+  }
+  document.getElementById("q").addEventListener("input",function(){shown=STEP;render();});
+  var hc=(location.hash||"").replace("#",""); if(byCat[hc]) cat=hc;   // เปิดหมวดตาม #cat
+  // global search entry: index.html?q=<query> from the shared navbar search
+  var qp=null; try{qp=new URLSearchParams(location.search).get("q");}catch(e){}
+  if(qp){document.getElementById("q").value=qp;}
+  hstats(); renderFilters(); render();
+  if(qp){
+    try{document.getElementById("q").focus({preventScroll:true});}catch(e){document.getElementById("q").focus();}
+    // scroll after chrome injection + layout settle so results land in view
+    addEventListener("load",function(){
+      var sw=document.querySelector(".section-wrap")||document.getElementById("grid");
+      if(sw) requestAnimationFrame(function(){sw.scrollIntoView({behavior:"smooth",block:"start"});});
+    });
+  }
+  // shared global navbar drives category switching via hash
+  addEventListener("hashchange",function(){
+    var h=(location.hash||"").replace("#","");
+    if(byCat[h] && h!==cat){cat=h;filters={};shown=STEP;var qq=document.getElementById("q");if(qq)qq.value="";renderFilters();render();}
+    if(window.ROM_updateNav) window.ROM_updateNav();
+  });
+})();
+</script>
+<script src="atmosphere.js" defer></script>
+</body></html>

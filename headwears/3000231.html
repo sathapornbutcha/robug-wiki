@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lifelong · ROBugcreammm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script>try{var t=localStorage.getItem("rom-theme");if(t===null)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+</head><body>
+<div class="topbar"><div class="wrap bar">
+  <a class="logo" href="../index.html"><span class="dot"></span><span><span class="ro">RO</span>Bugcreammm</span></a>
+  <div class="nav"><a href="../home.html">Home</a><a href="../index.html">Database</a><a href="../6v6.html">6v6</a></div>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+</div></div>
+<div class="wrap">
+  <a class="back" href="../index.html">← กลับหน้าหลัก</a>
+  <div class="detail-head">
+    <div class="detail-sprite">🎩</div>
+    <div class="detail-title">
+      <h1>Lifelong</h1>
+      <div class="detail-sub">Headgear · Headwears #3000231</div>
+      <div class="chips"><span class="tag">Type: Headgear</span></div>
+    </div>
+  </div>
+  <div class="section"><h3>Description</h3><div class="desc">ATK＋5%;Variable CT－1s</div></div><div class="section"><h3>Effect</h3><div class="statline"><span>AtkPer</span><span class="v">0.05</span></div><div class="statline"><span>CTChange</span><span class="v">-1</span></div></div>
+</div>
+<script>function toggleTheme(){var d=document.documentElement;var dark=d.getAttribute("data-theme")==="dark";if(dark){d.removeAttribute("data-theme")}else{d.setAttribute("data-theme","dark")}try{localStorage.setItem("rom-theme",dark?"":"dark")}catch(e){}setThemeIcon()}function setThemeIcon(){var b=document.getElementById("themeBtn");if(b)b.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"}setThemeIcon();</script>
+<script src="../atmosphere.js" defer></script>
+</body></html>

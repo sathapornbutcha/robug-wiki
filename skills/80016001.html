@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="th"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kitty Wave Qigong · ROBugcreammm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script>try{var t=localStorage.getItem("rom-theme");if(t===null)t="dark";if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+</head><body>
+<div class="topbar"><div class="wrap bar">
+  <a class="logo" href="../index.html"><span class="dot"></span><span><span class="ro">RO</span>Bugcreammm</span></a>
+  <div class="nav"><a href="../home.html">Home</a><a href="../index.html">Database</a><a href="../6v6.html">6v6</a></div>
+  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+</div></div>
+<div class="wrap">
+  <a class="back" href="../index.html">← กลับหน้าหลัก</a>
+  <div class="detail-head">
+    <div class="detail-sprite">✨</div>
+    <div class="detail-title">
+      <h1>Kitty Wave Qigong</h1>
+      <div class="detail-sub">Skill · Skills #80016001</div>
+      <div class="chips"></div>
+    </div>
+  </div>
+  <div class="section"><h3>Description</h3><div class="desc">Kitty Wave Qigong Lvl: 1 Attack Physical Range: 5 Shoots a powerful arrow, dealing (Atk115%) Dmg to the target and knocking it back Formula function CommonFun.calcDamage_8009(srcUser, targetUser, params, damageParam, logger) local Hp = targetUser:GetProperty(&quot;Hp&quot;) local A = Hp if targetUser:GetNpcID() ~= 59128_VOCAL then A = 1 end return A, CommonFun.DamageType.Normal end Enemy { &quot;id&quot;: 70047001, &quot;BuffDesc&quot;: &quot;Reduces enemy movement speed for 5 seconds&quot;, &quot;BuffIcon&quot;: &quot;skillbuff_230001&quot;, &quot;BuffName&quot;: &quot;Decrease Agility (Root)&quot;, &quot;BuffRate&quot;: { &quot;Odds&quot;: { &quot;a&quot;: 0, &quot;b&quot;: 100, &quot;type&quot;: 160 } }, &quot;IconType&quot;: 1</div></div>
+</div>
+<script>function toggleTheme(){var d=document.documentElement;var dark=d.getAttribute("data-theme")==="dark";if(dark){d.removeAttribute("data-theme")}else{d.setAttribute("data-theme","dark")}try{localStorage.setItem("rom-theme",dark?"":"dark")}catch(e){}setThemeIcon()}function setThemeIcon(){var b=document.getElementById("themeBtn");if(b)b.textContent=document.documentElement.getAttribute("data-theme")==="dark"?"☀️":"🌙"}setThemeIcon();</script>
+<script src="../atmosphere.js" defer></script>
+</body></html>
